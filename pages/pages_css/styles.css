@@ -1,0 +1,353 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    
+    font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+
+:root
+{
+    --primary-color: #f5f5f5;
+    --secondary-color: #143b6a;
+    --tertiary-color: #1e359b;
+    --text-color: #333;
+    --secondary-text-color: #425c7d;
+
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+}
+
+.header {
+    background-color: var(--tertiary-color);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav .left,
+.nav .right {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.nav .left span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav .right a {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.search-section {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.search-section .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.search-section .tabs div {
+    text-align: center;
+    cursor: pointer;
+}
+
+.search-section .tabs div img {
+    height: 40px;
+}
+
+.search-section .tabs div span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.search-section .search-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-section .search-form input,
+.search-section .search-form select {
+    padding: 10px;
+    margin: 5px 4px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    flex: 1 1 200px;
+}
+
+.search-section .search-form button {
+    padding: 10px 20px;
+    background-color: var(--tertiary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    flex: 1 1 200px;
+}
+
+
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+
+
+/* ---------------------- */
+.bec {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    margin: 5;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    
+}
+.bec h3 {
+    margin-left: 20px;
+    
+}
+.bec i {
+    font-size: 20px;
+}
+
+.sub-post {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+
+
+
+/*  */
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.trip-info {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+   
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.trip-info .station {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.trip-info .time {
+    font-size: 18px;
+    color: #555;
+}
+
+.trip-info .bus-info {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.trip-info .pnr {
+    font-size: 16px;
+    color: #ff6600;
+    margin-top: 10px;
+}
+
+.trip-info .check-pnr {
+    display: inline-block;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #ff6600;
+    font-weight: 500;
+}
+
+.trip-info .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.trip-info .action {
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.trip-info .action i {
+    font-size: 24px;
+    color: #1e359b;
+}
+
+.book-now {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.book-now input {
+    padding: 10px;
+    font-size: 11px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.book-now button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1e359b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.book-now button:hover {
+    background-color: #143b6a;
+}
+
+@media (max-width: 500px) {
+    .trip-info .actions
+    {  
+        padding: 2px;
+        justify-content: center;
+        gap: 10px;
+    }
+    .trip-info .action {
+      font-size: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .trip-info .station {
+        font-size: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .trip-info .time {
+        font-size: 16px;
+    }
+
+    .book-now input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .book-now button {
+        width: 100%;
+    }
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    overflow: hidden; 
+}
+
+.trip-info {
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;  /* Ensures buttons are on top */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: background for better visibility */
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
+
+@media (max-width: 400px) {
+    .sub-post {
+        grid-template-columns: 1fr;
+   
+    }
+
+    .sub-post h3 {
+        font-size: 14px; 
+    }
+}

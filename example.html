@@ -1,0 +1,486 @@
+<html>
+
+<head>
+    <title>
+        Friends
+    </title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100vh;
+
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+
+        }
+
+        .sidebar .logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .logo i {
+            margin-right: 10px;
+        }
+
+        .sidebar .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .sidebar .menu-item i {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .sidebar .menu-item:hover {
+            background-color: #f0f2f5;
+            border-radius: 10px;
+        }
+
+        .sidebar .menu-item.active {
+            background-color: #e4e6eb;
+            border-radius: 10px;
+        }
+
+        .sidebar .menu-item span {
+            flex-grow: 1;
+        }
+
+        .sidebar .menu-item .badge {
+            background-color: #f02849;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .sidebar .group-title {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #606770;
+            text-transform: uppercase;
+        }
+
+        .sidebar .group-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .sidebar .group-item img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 250px;
+            margin-right: 300px;
+            overflow-y: auto;
+            height: 100vh;
+        }
+
+        .main-content .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            position: sticky;
+            margin-left: 40px;
+            border: #f02849 1px solid;
+            top: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .main-content .search-bar input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            font-size: 16px;
+        }
+
+        .main-content .search-bar i {
+            color: #606770;
+            font-size: 20px;
+        }
+
+        .main-content .post-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .main-content .post-box .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .main-content .post-box .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .main-content .post-box .user-info .name {
+            font-weight: 500;
+        }
+
+        .main-content .post-box .user-info .time {
+            color: #606770;
+            font-size: 14px;
+        }
+
+        .main-content .post-box .post-content {
+            margin-bottom: 10px;
+        }
+
+        .main-content .post-box .post-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .main-content .post-box .post-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .main-content .post-box .post-actions .action {
+            display: flex;
+            align-items: center;
+            color: #606770;
+            cursor: pointer;
+        }
+
+        .main-content .post-box .post-actions .action i {
+            margin-right: 5px;
+        }
+
+        .main-content .post-box .post-actions .action:hover {
+            color: #1877f2;
+        }
+
+        .main-content .post-box .comment-box {
+            display: flex;
+            align-items: center;
+            background-color: #f0f2f5;
+            padding: 10px;
+            border-radius: 50px;
+            margin-top: 10px;
+        }
+
+        .main-content .post-box .comment-box input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            background-color: transparent;
+            font-size: 16px;
+        }
+
+        .main-content .post-box .comment-box i {
+            color: #606770;
+            font-size: 20px;
+        }
+
+        .right-sidebar {
+            width: 300px;
+            padding: 20px;
+            margin-left: auto;
+            position: fixed;
+            right: 0;
+        }
+
+        .right-sidebar .section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .right-sidebar .section .title {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .right-sidebar .section .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .right-sidebar .section .item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .right-sidebar .section .item .name {
+            font-weight: 500;
+        }
+
+        .right-sidebar .section .item .time {
+            color: #606770;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-circle">
+                </i>
+                BondSpace
+            </div>
+            <div class="menu-item active">
+                <i class="fas fa-home">
+                </i>
+                Home
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-store">
+                </i>
+                Trending
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-user-friends">
+                </i>
+                Friends
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-users">
+                </i>
+                Bonds
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-bookmark">
+                </i>
+                Saved
+            </div>
+
+            <div class="menu-item">
+                <i class="fas fa-star">
+                </i>
+                Favourites
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-chevron-down">
+                </i>
+                See More
+            </div>
+            <div class="group-title">
+                My Bonds
+            </div>
+            <div class="group-item">
+                <img alt="Group icon" src="https://placehold.co/30x30" />
+                The Nerd Head
+            </div>
+            <div class="group-item">
+                <img alt="Group icon" src="https://placehold.co/30x30" />
+                Take a Trip
+            </div>
+            <div class="group-item">
+                <img alt="Group icon" src="https://placehold.co/30x30" />
+                Papa Ki Pari
+            </div>
+            <div class="group-item">
+                <img alt="Group icon" src="https://placehold.co/30x30" />
+                College Friends
+            </div>
+            <div class="group-item">
+                <img alt="Group icon" src="https://placehold.co/30x30" />
+                My Dream House
+            </div>
+        </div>
+
+
+        <div class="main-content">
+            <div class="search-bar">
+                <i class="fas fa-search">
+                </i>
+                <input placeholder="Search for Bonds, Posts" type="text" />
+            </div>
+            <div class="post-box">
+                <div class="user-info">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div>
+                        <div class="name">
+                            John Carter
+                        </div>
+                        <div class="time">
+                            4 hours ago
+                        </div>
+                    </div>
+                </div>
+                <div class="post-content">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+                <img alt="Post image" class="post-image"
+                    src="https://m.media-amazon.com/images/M/MV5BNzY3YTA2NDctZTJjOC00ZjliLWFlMmYtYjhhZWEyNzc5Mjg5XkEyXkFqcGc@._V1_QL75_UX1230_.jpg"
+                    height="500" width="300" />
+                <div class="post-actions">
+                    <div class="action">
+                        <i class="fas fa-heart">
+                        </i>
+                        1.2k
+                    </div>
+                    <div class="action">
+                        <i class="fas fa-comment">
+                        </i>
+                        200
+                    </div>
+                    <div class="action">
+                        <i class="fas fa-share">
+                        </i>
+                        17
+                    </div>
+                </div>
+                <div class="comment-box">
+                    <input placeholder="Write your comment" type="text" />
+                    <i class="fas fa-smile">
+                    </i>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="section">
+                <div class="title">
+                    Birthdays
+                    <i class="fas fa-birthday-cake">
+                    </i>
+                </div>
+                <div class="item">
+                    <div>
+                        Pola Foster and 3 other friends have birthday today
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="title">
+                    Lastest Activity
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" />
+                    <div>
+                        <div class="name">
+                            Hally Harald Gomes
+                        </div>
+                        <div class="time">
+                            added a photo in Talk.js about an hour ago
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" />
+                    <div>
+                        <div class="name">
+                            Alex kai
+                        </div>
+                        <div class="time">
+                            sent you a friend request 3 hours ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="title">
+                    Active Friends
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        Jaden Chance
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        Arezki Williams
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        Rose James
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        Tman Mats
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        Alex Andrew
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        Kaixi Cark
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        Hamid Oskip
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        Serena Lewis
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="User profile picture" src="https://placehold.co/40x40" />
+                    <div class="name">
+                        April Sky
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

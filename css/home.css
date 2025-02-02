@@ -1,0 +1,761 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    
+    font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+.dark-theme {
+    --primary-color: #121212;
+    --secondary-color: #6e0fb3;
+    --tertiary-color: #1e1e1e;
+    --text-color: #f7f7f7;
+    --secondary-text-color: #c3c3c3;
+}
+::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+
+
+
+
+.left-sidebar
+ {
+    width: 250px; /* Fixed width for sidebars */
+    padding: 20px;
+    background-color: var(--tertiary-color);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    border-radius:  10px;
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    
+    position: fixed;
+}
+/* Left side bar */
+.left-sidebar .logo {
+    font-size: 20px; /* Adjust size here */
+    font-weight: bold; /* Make the text bold */
+    color: var(--text-color); 
+    line-height: 30px; 
+    margin-left: 10px;
+    display: flex;
+      align-items: center;
+}
+
+.left-sidebar .logo img {
+      width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.left-sidebar .menu-item {
+    display: flex;
+    align-items: center;
+    
+    padding: 10px 0;
+    color: var(--text-color);
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    
+    padding: 10px 0;
+    color: var(--text-color);
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+
+}
+
+.left-sidebar .menu-item i {
+    margin-right: 15px;
+    color: #606770;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.left-sidebar .menu-item i.active {
+    margin-right: 15px;
+    color: white;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+
+
+.left-sidebar .menu-item a {
+    text-decoration: none;
+    color: var(--text-color);
+    
+}
+
+.left-sidebar .menu-item:hover {
+    background-color: var(--secondary-text-color);
+    border-radius: 10px;
+    color: var(--primary-color);
+    
+    .left-sidebar .menu-item i {
+        margin-right: 15px;
+        color: var(--primary-color);
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+}
+.left-sidebar .menu-item:hover i {
+    margin-right: 15px;
+    color: var(--primary-color);
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+
+.left-sidebar form{
+text-align: center; /* Centers text inside the form */
+    margin-top: auto;
+
+}
+
+
+
+
+
+.left-sidebar button {
+    background-color: var(--secondary-color) ;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.left-sidebar button:hover {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.left-sidebar .menu-item.active {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.left-sidebar .menu-item.active i {
+    margin-right: 15px;
+    color: white;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    width: 100%;
+overflow: hidden;    
+    overflow-y: auto;
+    height: 100vh;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+
+.main-content .post-box {
+    background-color: var(--tertiary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+.main-content .post-box:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-content .post-box .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-color);
+    
+}
+
+.main-content .post-box .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.main-content .post-box .user-info span {
+    margin-left: 10px;
+}
+
+.main-content .post-box .post-content {
+    margin-bottom: 10px;
+    color: var(--secondary-text-color);
+}
+
+.post-image {
+    width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+}
+
+.post-title {
+  
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-color);
+
+
+}
+
+.post-title a {
+    text-decoration: none;
+    color: inherit;
+}
+.main-content .post-box .post-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-content .post-box .post-actions .action {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-text-color);
+    
+}
+
+.main-content .post-box .post-actions .action i {
+    margin-right: 5px;
+}
+
+.main-content h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+.post-info {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+}
+
+.post-stats {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+
+.page-title {
+    font-weight: bold; /* Make the text bold */
+    color: var(--text-color); 
+    line-height: 30px; 
+    margin-left: 10px;
+    display: flex;
+      align-items: center;
+}
+
+h1 {
+    display: flex;
+    /* Allow title to take available space */
+    text-align: center;
+    /* Center the title text */
+    margin: 0;
+    /* Remove default margin */
+}
+.name{
+    /* Allow title to take available space */
+    text-align: center;
+    /* Center the title text */
+    margin: 0;
+    /* Remove default margin */
+}
+
+.back-button {
+    /* Position button absolutely */
+    left: 10px;
+    /* Distance from the left edge */
+    background: none;
+    /* No background */
+    border: none;
+    /* No border */
+    cursor: pointer;
+    /* Pointer cursor */
+    /* Change the color to your desired theme */
+    font-size: 20px;
+    /* Font size for the icon */
+    transition: color 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+.back-button:hover {
+    color: var(--secondary-color);
+    /* Darker shade on hover */
+}
+
+
+h2 {
+    color: var(--text-color);
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.right-sidebar {
+    width: 200px;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    margin-right: 50px;
+    height: 70vh;
+    overflow-y: auto;
+}
+
+.right-sidebar h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.right-sidebar .section {
+    width: 100%;
+    background-color: var(--tertiary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;    
+}
+.right-sidebar .section ul {
+    list-style: none;
+    margin-left: 10px;
+    padding: 0;
+}
+
+
+.right-sidebar .section li a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+
+.create-bond-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('path/to/icon.png'); /* Replace with the path to your icon image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+}
+
+.create-bond-link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.create-bond-link:hover .create-bond-icon {
+    background-color: var(--secondary-color);
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: none;
+}
+.top-bar button{
+    background-color: none;
+    border: none;
+    background: none;
+}
+.fa-sun {
+    font-size: 25px;
+   color: var(--text-color); 
+}
+.fa-moon {
+    font-size: 25px;
+    
+}
+
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 8px;
+    background-color: var(--tertiary-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: var(--secondary-color) solid 1px;
+}
+
+.search-bar i {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+    margin-right: 10px;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: var(--secondary-text-color);
+}
+
+
+/* Explore.php */
+
+
+        /* Add this to your existing CSS file (home.css) */
+        .category-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        .category-item {
+            background-color: var(--tertiary-color);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 calc(50% - 20px);
+            text-align: center;
+            transition: background-color 0.3s;
+            color: var(--text-color);
+            font-size: large;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .category-item a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .category-item:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+            transform: scale(1.02);
+            font-size: larger ;
+        }
+
+        .category-item i {
+            font-size: 48px;
+        }
+
+        .bond-list {
+            display: none;
+            /* Initially hidden */
+            margin-top: 10px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .bond-list li {
+            background-color: none;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .bond-list li a{
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .page-title {
+            display: flex;
+            /* Use flexbox for layout */
+            align-items: center;
+            /* Align items vertically */
+            justify-content: center;
+            /* Center the title text */
+            position: relative;
+            /* Positioning context for absolute positioning */
+            margin-bottom: 20px;
+            /* Space below the title */
+        }
+
+     
+
+        .back-button {
+            color: var(--text-color);
+            position: absolute;
+            /* Position button absolutely */
+            left: 10px;
+            /* Distance from the left edge */
+            background: none;
+            /* No background */
+            border: none;
+            /* No border */
+            cursor: pointer;
+            /* Pointer cursor */
+            /* Change the color to your desired theme */
+            font-size: 20px;
+            /* Font size for the icon */
+            transition: color 0.3s;
+            /* Smooth transition for hover effect */
+        }
+
+        .back-button:hover {
+            color: var(--secondary-color);
+            /* Darker shade on hover */
+        }
+/* ------------------------------ */
+
+
+/* joined_bond.php */
+.bond-list {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    gap: 10px;
+    /* Space between items */
+    margin: 20px 0;
+    /* Add some margin above and below */
+}
+
+.bond-item {
+    background-color: var(--tertiary-color);
+    /* Light background for items */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Light border */
+    border-radius: 10px;
+    color: var(--text-color);
+    /* Rounded corners */
+    padding: 10px;
+    /* Padding inside the items */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+.bond-item a {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: var(--text-color);
+    /* Dark text color */
+
+    /* Bold text */
+}
+
+.bond-item:hover {
+    background-color: var(--secondary-color);
+    /* Change background on hover */
+    transform: scale(1.02);
+
+    /* Slightly increase size on hover */
+}
+.bond-item:hover a{
+    color: white;
+
+    /* Slightly increase size on hover */
+}
+
+.no-bonds-message {
+    color: #888;
+    /* Grey color for the message */
+    font-style: italic;
+    /* Italicize the message */
+    text-align: center;
+    /* Center the message */
+}
+
+.create-bond-link {
+    display: inline-flex;
+    /* Align icon and text side by side */
+    align-items: center;
+    /* Center icon vertically with text */
+    background-color: var(--secondary-color);
+    /* Green background */
+    color: white;
+    /* White text */
+    padding: 8px 12px;
+    /* Padding for the link */
+    border-radius: 5px;
+    /* Rounded corners */
+    text-decoration: none;
+    /* Remove underline from link */
+    margin-left: 10px;
+    /* Space between heading and link */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transition effects */
+}
+
+.create-bond-link:hover {
+    /* Darker green on hover */
+    cursor: pointer;
+    text-decoration: none;
+    /* Slightly enlarge on hover */
+}
+
+.create-bond-icon {
+    margin-top: 3px;
+    margin-right: 5px;
+    align-items: center;
+    /* Space between icon and text */
+}
+
+/* ------------------------------ */
+
+
+/* createbond.php */
+
+        /* Container style */
+        .create-bond-form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--tertiary-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Form title */
+        .create-bond-form h1 {
+            text-align: center;
+            font-size: 24px;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            color: var(--text-color);
+
+        }
+
+        /* Label styling */
+        .create-bond-form label {
+            display: block;
+            font-weight: bold;
+            color: var(--secondary-text-color);
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: var(--text-color);
+
+        }
+
+        /* Input fields */
+        .create-bond-form input[type="text"],
+        .create-bond-form textarea,
+        .create-bond-form select {
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            background-color: var(--tertiary-color);
+            transition: border-color 0.3s ease;
+            color: var(--text-color);
+
+        }
+
+        .create-bond-form input[type="text"]:focus,
+        .create-bond-form textarea:focus,
+        .create-bond-form select:focus {
+            background-color: var(--tertiary-color);
+            border-color: var(--secondary-color);
+            color: var(--text-color);
+            outline: none;
+        }
+
+        /* Textarea styling */
+        .create-bond-form textarea {
+            min-height: 100px;
+            resize: vertical;
+            background-color: var(--tertiary-color);
+        }
+
+        /* Dropdown styling */
+        .create-bond-form select {
+            background-color: var(--tertiary-color);
+            color: var(--text-color);
+            padding: 8px;
+        }
+
+        /* Submit button */
+        .create-bond-form button[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .create-bond-form button[type="submit"]:hover {
+            cursor: pointer;
+        }

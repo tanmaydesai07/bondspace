@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar-left {
+    width: 20%;
+    float: left; /* Aligns the left sidebar to the left */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Border for the sidebar */ /* Light background for sidebars */
+}
+
+.sidebar-right {
+    width: 25%;
+    float: right; /* Aligns the sidebar to the right */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Border for the sidebar */
+    margin-left: 20px; /* Space between content and sidebar */
+}
+
+.content {
+    flex: 1; /* Take the remaining space */
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333; /* Dark text for headers */
+}
+
+ul {
+    list-style-type: none; /* Remove bullets from list */
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px; /* Space between list items */
+}
+
+button {
+    cursor: pointer;
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
